@@ -81,6 +81,9 @@ public class HandleController {
             String ATT_pred= res_p.get("ATT_pred").toString();
             double pred = Double.parseDouble(ATT_pred);
             String protocol = res_p.get("protocol").toString();
+            ArrayList<Map<String,Object>> rule_dicts = (ArrayList<Map<String, Object>>) res_p.get("rule_dicts");
+//            String tree = res_p.get("tree").toString();
+//            String leaf = res_p.get("leaf").toString();
             String src_ip = csv_str[1];
             String dst_ip = csv_str[3];
             String src_port = csv_str[2];
@@ -90,6 +93,9 @@ public class HandleController {
             tableItem.put("GBDT_pred",GBDT_pred);
             tableItem.put("ATT_pred",ATT_pred);
             tableItem.put("protocol",protocol);
+            tableItem.put("rules",rule_dicts);
+//            tableItem.put("tree",tree);
+//            tableItem.put("leaf",leaf);
             tableItem.put("src_ip",src_ip);
             tableItem.put("dst_ip",dst_ip);
             tableItem.put("src_port",src_port);
