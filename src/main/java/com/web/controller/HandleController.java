@@ -39,7 +39,9 @@ public class HandleController {
             res.put("status","error");
             res.put("msg","文件类型不对");
         }
-        String path="D:\\project\\CICFlowMeter-master\\data\\in";
+//        String path="D:\\project\\CICFlowMeter-master\\data\\in";
+        String path = System.getProperty("user.dir");
+        path = path + "\\data\\in";
         File folder=new File(path);
         String newName = UUID.randomUUID().toString()+".pcap";
         try{
