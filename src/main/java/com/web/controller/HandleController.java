@@ -78,6 +78,7 @@ public class HandleController {
                 a.put(Label[i], Collections.singletonList(csv_str[position[i]]));
             }
             String url = "http://127.0.0.1:5000/modelHandle";
+//            String url = "http://192.168.209.128:5000/modelHandle";
             Map<String,Object> res_p = restTemplate.postForObject(url,a,Map.class);
             String GBDT_pred= res_p.get("GBDT_pred").toString();
             String ATT_pred= res_p.get("ATT_pred").toString();
